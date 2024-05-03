@@ -30,8 +30,12 @@ class MyUDPHandler(socketserver.BaseRequestHandler):
             keyboard.write(text, delay=0.035)
 
 
-if __name__ == "__main__":
+def main():
     HOST, PORT = "0.0.0.0", 9999
     with socketserver.UDPServer((HOST, PORT), MyUDPHandler) as server:
         print(f"Starting server at {HOST}:{PORT}")
         server.serve_forever()
+
+
+if __name__ == "__main__":
+    main()
